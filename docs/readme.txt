@@ -1,7 +1,7 @@
 ﻿TestFacade：注册APP_STARTUP和APP_STARTUP_OVER，发送APP_STARTUP给StartUpCommand。
 
 
-StartUpCommand：注册mediator，将舞台显示对象传给mediator。注册proxy。发送APP_STARTUP_OVER给ImageCommand，告诉它可以获取数据了。
+StartUpCommand：注册mediator，将舞台显示对象(Image和Label)传给mediator。注册proxy。发送APP_STARTUP_OVER给ImageCommand，告诉它可以获取数据了。
 
 
 ImageProxy：得到数据，发送IMAGE_READY及数据，给ImageMediator。
