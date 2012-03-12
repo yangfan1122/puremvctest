@@ -34,16 +34,20 @@ package com.yf.puremvctest.mvc.v
 			{
 				case ImageProxy.IMAGE_READY:
 					picArr = notification.getBody() as Array;
-					Img.source = picArr[0].path;
+					
+					//暂只显示第一张
+					DisplayObjects.image.source = picArr[0].path;
+					DisplayObjects.text.text = picArr[0].name;
+					
 					break;
 				default:
 					break;
 			}
 		}
 		
-		private function get Img():Image
+		private function get DisplayObjects():Object
 		{
-			return viewComponent as Image;
+			return viewComponent as Object;
 		}
 
 	}

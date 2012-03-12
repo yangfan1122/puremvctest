@@ -2,7 +2,6 @@ package com.yf.puremvctest.mvc.c
 {
 	import org.puremvc.as3.interfaces.ICommand;
 	import org.puremvc.as3.patterns.command.SimpleCommand;
-	import org.puremvc.as3.interfaces.ICommand;
 	import org.puremvc.as3.interfaces.INotification;
 	
 	import com.yf.puremvctest.mvc.m.ImageProxy;
@@ -16,8 +15,8 @@ package com.yf.puremvctest.mvc.c
 
 		override public function execute(notification:INotification):void
 		{
-			//得到图片链接
-			(facade.retrieveProxy(ImageProxy.NAME) as ImageProxy).getImages();		
+			//得到图片信息
+			(facade.retrieveProxy(ImageProxy.NAME) as ImageProxy).getImages();
 		}
 	}
 }

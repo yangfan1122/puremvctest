@@ -19,11 +19,12 @@ package com.yf.puremvctest.mvc.m
 		public function getImages():void
 		{
 			data = [];
-			data.push(new ImageVO(Statics.picArr[0].img, Statics.picArr[0].img));
-			data.push(new ImageVO(Statics.picArr[1].img, Statics.picArr[1].img));
-			data.push(new ImageVO(Statics.picArr[2].img, Statics.picArr[2].img));
+			for(var i:int=0;i<3;i++)
+			{
+				data.push(new ImageVO(Statics.picArr[i].img, Statics.picArr[i].name));	
+			}
 				
-			this.sendNotification(IMAGE_READY, data);
+			this.sendNotification(IMAGE_READY, data);//ImageMediator中声明对IMAGE_READY感兴趣
 		}
 		
 	}
