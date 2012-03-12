@@ -2,7 +2,6 @@ package com.yf.puremvctest.mvc.c
 {
 	import com.yf.puremvctest.mvc.m.ImageProxy;
 	import com.yf.puremvctest.mvc.v.ImageMediator;
-	import com.yf.puremvctest.mvc.v.LabelMediator;
 	import com.yf.puremvctest.mvc.TestFacade;
 	
 	import org.puremvc.as3.interfaces.INotification;
@@ -20,13 +19,12 @@ package com.yf.puremvctest.mvc.c
 			var _stage:Object = notification.getBody();
 			
 			//注册mediator
-			facade.registerMediator(new ImageMediator(ImageMediator.NAME, _stage.img));
-			facade.registerMediator(new LabelMediator(LabelMediator.NAME, _stage.txt));
+			facade.registerMediator(new ImageMediator(ImageMediator.NAME, {image:_stage.img, text:_stage.txt}));
 			
 			//注册proxy
 			facade.registerProxy(new ImageProxy(ImageProxy.NAME));
 			
-			sendNotification(TestFacade.APP_STARTUP_OVER, _stage);
+			sendNotification(TestFacade.APP_STARTUP_OVER, _stage);//发送给ImageCommand，在TestFacade中注册
 		}
 	}
 }
